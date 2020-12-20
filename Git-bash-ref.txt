@@ -60,6 +60,10 @@ git push --set-upstream origin master
 
 To push the current branch to a branch of the same name.
 git config --global push.default current
+
+to keep track of commit and stay up-to-date
+git push -u
+
 =================================
 
 To switch to SSH from https in git bash
