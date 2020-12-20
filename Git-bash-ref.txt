@@ -1,0 +1,104 @@
+Reference to Git commands
+=========================
+
+rpdar@siva-lab MINGW64 /c/1_TechLab/aws-lab (master)
+$ git remote -v
+origin  https://github.com/jtechsiva/aws-lab.git (fetch)
+origin  https://github.com/jtechsiva/aws-lab.git (push)
+---------------------
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+diff.astextplain.textconv=astextplain
+rebase.autosquash=true
+credential.helper=manager
+user.name=guru
+user.email=msiva.cloudguru@gmail.com
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/jtechsiva/aws-lab.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+--------------------
+$ ~/.gitconfig
+/c/Users/rpdar/.gitconfig: line 1: [user]: command not found
+/c/Users/rpdar/.gitconfig: line 2: name: command not found
+/c/Users/rpdar/.gitconfig: line 3: email: command not found
+------------
+eval “$(ssh-agent -s)”
+which ssh-agent
+git config --global core.sshCommand "'C:\Windows\System32\OpenSSH\ssh.exe'"
+ssh-add -k ~/.ssh/jtechsiva
+rpdar@siva-lab MINGW64 /c/1_TechLab/aws-handson/course-list-lambda (master)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (13.234.176.102)' can't be established.
+RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,13.234.176.102' (RSA) to the list of known hosts.
+Hi jtechsiva! You've successfully authenticated, but GitHub does not provide shell access.
+
+-----------------
+git PUSH setting
+-----------------
+want to check your setting, do the following
+git config --global push.default
+
+To push the current branch and set the remote as upstream, use
+git push --set-upstream origin master
+
+To push the current branch to a branch of the same name.
+git config --global push.default current
+=================================
+
+To switch to SSH from https in git bash
+rpdar@siva-lab MINGW64 /c/1_TechLab/aws-handson/course-list-lambda (master)
+$ git remote show origin
+* remote origin
+  Fetch URL: https://github.com/jtechsiva/course-list-lambda.git
+  Push  URL: https://github.com/jtechsiva/course-list-lambda.git
+  HEAD branch: master
+  Remote branch:
+    master tracked
+  Local ref configured for 'git push':
+    master pushes to master (fast-forwardable)
+
+rpdar@siva-lab MINGW64 /c/1_TechLab/aws-handson/course-list-lambda (master)
+$ git remote -v
+origin  https://github.com/jtechsiva/course-list-lambda.git (fetch)
+origin  https://github.com/jtechsiva/course-list-lambda.git (push)
+
+rpdar@siva-lab MINGW64 /c/1_TechLab/aws-handson/course-list-lambda (master)
+$ git remote remove origin
+
+rpdar@siva-lab MINGW64 /c/1_TechLab/aws-handson/course-list-lambda (master)
+$ git remote -v
+
+rpdar@siva-lab MINGW64 /c/1_TechLab/aws-handson/course-list-lambda (master)
+$ git remote show origin
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+rpdar@siva-lab MINGW64 /c/1_TechLab/aws-handson/course-list-lambda (master)
+$ git remote add origin git@github.com:jtechsiva/course-list-lambda.git
+
+rpdar@siva-lab MINGW64 /c/1_TechLab/aws-handson/course-list-lambda (master)
+$ git remote -v
+origin  git@github.com:jtechsiva/course-list-lambda.git (fetch)
+origin  git@github.com:jtechsiva/course-list-lambda.git (push)
+
+

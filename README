@@ -1,0 +1,18 @@
+Reference to Git commands
+=========================
+
+git init
+git remote add origin git@github.com:jtechsiva/git-help.git
+
+-----------------
+git PUSH setting
+-----------------
+want to check your setting, do the following
+git config --global push.default
+
+To push the current branch and set the remote as upstream, use
+git push --set-upstream origin master
+
+To push the current branch to a branch of the same name.
+git config --global push.default current
+=================================
